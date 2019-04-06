@@ -33,14 +33,12 @@ export abstract class Poligono{
     public translateX(x: number){
         this.arestas.forEach(a => {
             a.v1.x += x;
-            a.v2.x += x;
         });
     }
 
     public translateY(x: number){
         this.arestas.forEach(a => {
             a.v1.y += x;
-            a.v2.y += x;
         });
     }
 
@@ -53,6 +51,30 @@ export abstract class Poligono{
     public escalaY(mult: number){
         this.arestas.forEach(a => {
             a.v2.y *= mult;
+        });
+    }
+
+    public rotate(angulo: number){
+        angulo = angulo*Math.PI/180;
+        this.arestas.forEach(a =>{
+            console.log(a.v1.x, a.v1.y);
+            let x = a.v1.x* Math.cos(angulo) - a.v1.y* Math.sin(angulo);
+            let y = a.v1.x* Math.sin(angulo) + a.v1.y* Math.cos(angulo);
+            a.v1.x = x;
+            a.v1.y = y;
+            console.log(a.v1.x, a.v1.y);
+        });
+    }
+
+    public reflexaoX(){
+        this.arestas.forEach(a =>{
+            a.v1.y *= -1;
+        });
+    }
+
+    public reflexaoY(){
+        this.arestas.forEach(a =>{
+            a.v1.x *= -1;
         });
     }
 }

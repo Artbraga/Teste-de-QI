@@ -4,6 +4,7 @@ import { Quadrado } from 'src/app/entities/quadrado';
 import { Triangulo } from 'src/app/entities/triangulo';
 import { Linha } from 'src/app/entities/linha';
 import { Estrela } from 'src/app/entities/estrela';
+import { Figura } from 'src/app/entities/figura';
 
 @Component({
     selector: 'game-area',
@@ -12,12 +13,15 @@ import { Estrela } from 'src/app/entities/estrela';
 })
 export class GameAreaComponent implements OnInit {
 
-    poligono: Poligono;
+    figura: Figura;
     constructor() { }
 
     ngOnInit() {
-        this.poligono = new Estrela(Cores.verde);
-        this.poligono.escalaX(2);
+        let pol1 = new Quadrado(Cores.verde);
+        let pol2 = new Estrela(Cores.azul);
+        pol1.escalaX(2);
+        this.figura = new Figura();
+        this.figura.poligonos = [pol1, pol2];
     }
 
 }
