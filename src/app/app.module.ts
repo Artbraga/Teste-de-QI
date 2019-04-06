@@ -6,13 +6,15 @@ import { GameAreaComponent } from './components/game-area/game-area.component';
 import { CustomCanvasComponent } from './components/custom-canvas/custom-canvas.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NivelComponent } from './components/nivel/nivel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameAreaComponent,
     CustomCanvasComponent,
-    HomeComponent, 
+    HomeComponent,
+    NivelComponent, 
   ],
   imports: [
     BrowserModule,

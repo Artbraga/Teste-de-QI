@@ -1,11 +1,14 @@
-
-<div class="titulo">
-    <h1>Teste de QI</h1>
-</div>
-<div class="row justify-content-md-center">
-    <div class="col-md-auto">
-        <button class="iniciar btn btn-primary btn-lg" (click)="iniciar()"><span>INICIAR TESTE</span></button>
+<ng-container *ngIf="selecionado=='home'">
+    <div class="titulo">
+        <h1>Teste de QI</h1>
     </div>
-</div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <button class="iniciar btn btn-primary btn-lg" (click)="iniciar()"><span>INICIAR TESTE</span></button>
+        </div>
+    </div>
+</ng-container>
 
-<game-area></game-area>
+<ng-container *ngIf="selecionado=='jogo'">
+    <nivel [nivel]="nivelSelecionado"></nivel>
+</ng-container>

@@ -1,6 +1,52 @@
 {
-    "telas": [
-        "quadrado",
-        "triangulo"
+    "niveis": [
+        {
+            "figuras": [
+                {
+                    "poligonos": [
+                        {
+                            "nome": "quadrado",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                }
+                            ]
+                        },
+                        {
+                            "nome": "triangulo",
+                            "cor": "vermelho",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "rotate",
+                                    "valor": 30
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

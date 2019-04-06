@@ -15,7 +15,7 @@ export class CustomCanvasComponent implements OnInit {
 
     ngOnInit() {
         let c = <HTMLCanvasElement> document.getElementById(this.idCanvas);
-        c.width  = 100;
+        c.width  = 120;
         c.height = 120;
         let ctx = c.getContext("2d");
         if(this.grid) this.desenharGrid();

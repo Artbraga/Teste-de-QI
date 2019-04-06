@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import json from 'src/app/data/jogo.json';
+import * as json from 'src/app/data/jogo.json';
+import { Jogo, Nivel } from 'src/app/entities/jogo';
 
 
 @Component({
@@ -10,13 +11,19 @@ import json from 'src/app/data/jogo.json';
 })
 export class HomeComponent implements OnInit {
 
+    selecionado: string = "home";
+    nivelSelecionado: Nivel = null;
+    jogo: Jogo;
+
     constructor() { }
 
     ngOnInit(){
-        console.log(json);
+        this.jogo = Object.assign(new Jogo(), json.default);
+        console.log(this.jogo);
     }
 
     iniciar(){
-        console.log("click");
+        this.selecionado = "jogo";
+        this.nivelSelecionado = this.jogo.niveis[0]
     }
 }
