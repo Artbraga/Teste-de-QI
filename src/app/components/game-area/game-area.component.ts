@@ -12,6 +12,7 @@ import { Pentagono } from 'src/app/entities/pentagono';
 export class GameAreaComponent implements OnInit {
 
     @Input() figura: Figura;
+    @Input() numero: number
 
     constructor() { }
 
@@ -19,4 +20,7 @@ export class GameAreaComponent implements OnInit {
 
     }
 
+    getNome(){
+        return "canvas" + this.numero;
+    }
 }

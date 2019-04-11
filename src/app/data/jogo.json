@@ -5,16 +5,38 @@
                 {
                     "poligonos": [
                         {
-                            "nome": "quadrado",
-                            "cor": "verde",
+                            "nome": "trapezio",
+                            "cor": "azul",
                             "transformacoes": [
                                 {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
                                     "nome": "translateX",
-                                    "valor": 20
+                                    "valor": 10
                                 },
                                 {
                                     "nome": "translateY",
-                                    "valor": 20
+                                    "valor": 35
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "azul",
+                            "transformacoes": [
+                                {
+                                    "nome":"rotate",
+                                    "valor":"30"
                                 },
                                 {
                                     "nome": "escalaX",
@@ -23,24 +45,74 @@
                                 {
                                     "nome": "escalaY",
                                     "valor": 2
-                                }
-                            ]
-                        },
-                        {
-                            "nome": "triangulo",
-                            "cor": "vermelho",
-                            "transformacoes": [
+                                },
                                 {
                                     "nome": "translateX",
-                                    "valor": 20
+                                    "valor": 40
                                 },
                                 {
                                     "nome": "translateY",
-                                    "valor": 20
+                                    "valor": 10
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "azul",
+                            "transformacoes": [
+                                {
+                                    "nome":"rotate",
+                                    "valor":"60"
                                 },
                                 {
-                                    "nome": "rotate",
-                                    "valor": 30
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 60
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "azul",
+                            "transformacoes": [
+                                {
+                                    "nome":"rotate",
+                                    "valor":"90"
+                                },
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 70
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 10
                                 }
                             ]
                         }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Figura } from 'src/app/entities/figura';
 
 @Component({
@@ -6,14 +6,14 @@ import { Figura } from 'src/app/entities/figura';
     templateUrl: './custom-canvas.component.html',
     styleUrls: ['./custom-canvas.component.less']
 })
-export class CustomCanvasComponent implements OnInit {
+export class CustomCanvasComponent implements AfterViewInit {
 
     @Input() idCanvas: string;
     @Input() figura: Figura;
     @Input() grid: boolean;
     constructor() { }
 
-    ngOnInit() {
+    ngAfterViewInit() {
         let c = <HTMLCanvasElement> document.getElementById(this.idCanvas);
         c.width  = 120;
         c.height = 120;

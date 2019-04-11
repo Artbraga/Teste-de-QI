@@ -7,6 +7,7 @@ import { CustomCanvasComponent } from './components/custom-canvas/custom-canvas.
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NivelComponent } from './components/nivel/nivel.component';
+import { CronometroComponent } from './components/cronometro/cronometro.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NivelComponent } from './components/nivel/nivel.component';
     GameAreaComponent,
     CustomCanvasComponent,
     HomeComponent,
-    NivelComponent, 
+    NivelComponent,
+    CronometroComponent, 
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { Quadrado } from 'src/app/entities/quadrado';
 import { Triangulo } from 'src/app/entities/triangulo';
 import { Pentagono } from 'src/app/entities/pentagono';
 import { Estrela } from 'src/app/entities/estrela';
+import { Trapezio } from 'src/app/entities/trapezio';
+import { Hexagono } from 'src/app/entities/hexagono';
 
 @Component({
     selector: 'nivel',
@@ -15,6 +17,7 @@ import { Estrela } from 'src/app/entities/estrela';
 })
 export class NivelComponent implements OnInit {
     @Input() nivel: Nivel;
+    @Input() numero: number;
     figuras: Figura[] = [];
 
     constructor() { }
@@ -39,6 +42,12 @@ export class NivelComponent implements OnInit {
                         break;
                     case "estrela":
                         pol = new Estrela(p.cor);
+                        break;
+                    case "trapezio":
+                        pol = new Trapezio(p.cor);
+                        break;
+                    case "hexagono":
+                        pol = new Hexagono(p.cor);
                         break;
                 }
                 pol = this.transformacoes(pol, p.transformacoes)
@@ -78,5 +87,14 @@ export class NivelComponent implements OnInit {
             }
         });
         return pol;
+    }
+
+    getClass(){
+        switch(this.nivel.figuras.length){
+            case 1:
+                return "col-12";
+            case 4:
+                return "col-3";
+        }
     }
 }

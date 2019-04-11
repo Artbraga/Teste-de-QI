@@ -1,3 +1,15 @@
-<ng-container *ngFor="let fig of figuras">
-    <game-area [figura]="fig"></game-area>
-</ng-container>
+<div class="row">
+    <div class="col-9">
+        <div class="titulo">
+            <h2>Nível {{numero + 1}}</h2>
+        </div>
+    </div>
+    <div class="col-3">
+        <cronometro></cronometro>
+    </div>
+    <ng-container *ngFor="let fig of figuras; let i = index">
+        <div class="{{getClass()}}">
+            <game-area [figura]="fig" [numero]="i"></game-area>
+        </div>
+    </ng-container>
+</div>
