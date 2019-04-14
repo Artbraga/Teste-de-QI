@@ -11,12 +11,13 @@ export class CustomCanvasComponent implements AfterViewInit {
     @Input() idCanvas: string;
     @Input() figura: Figura;
     @Input() grid: boolean;
+    @Input() tamanho: number;
     constructor() { }
 
     ngAfterViewInit() {
         let c = <HTMLCanvasElement> document.getElementById(this.idCanvas);
-        c.width  = 120;
-        c.height = 120;
+        c.width  = this.tamanho;
+        c.height = this.tamanho;
         let ctx = c.getContext("2d");
         if(this.grid) this.desenharGrid();
         this.figura.poligonos.forEach(p =>{

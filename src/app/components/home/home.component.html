@@ -11,6 +11,6 @@
     </ng-container>
     
     <ng-container *ngIf="selecionado=='jogo'">
-        <nivel [nivel]="nivelSelecionado" [numero]="numeroDoNivel"></nivel>
+        <nivel [nivel]="nivelSelecionado" [numero]="numeroDoNivel" (avancarNivel)="proximoNivel($event)"></nivel>
     </ng-container>
 </div>

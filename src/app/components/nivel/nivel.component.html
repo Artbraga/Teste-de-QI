@@ -7,9 +7,24 @@
     <div class="col-3">
         <cronometro></cronometro>
     </div>
-    <ng-container *ngFor="let fig of figuras; let i = index">
-        <div class="{{getClass()}}">
-            <game-area [figura]="fig" [numero]="i"></game-area>
-        </div>
-    </ng-container>
+    <div class="row">
+        <ng-container *ngFor="let fig of figuras; let i = index">
+            <div class="{{getClass()}}">
+                <game-area [figura]="fig" [numero]="i" [tamanho]="nivel.tamanho"></game-area>
+            </div>
+        </ng-container>
+    </div>
+    <h4>{{nivel.pergunta}}</h4>
+    <div class="row">
+        <ng-container *ngFor="let fig of opcoes; let i = index">
+            <div class="col-3 opcoes">
+                <game-area [figura]="fig" [numero]="i+4" [tamanho]="nivel.tamanho"></game-area>
+                <input type="radio" value="{{i}}" name="nivel{{nivel}}" [(ngModel)]="opcaoSelecionada" >
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="row justify-content-md-end">
+        <button type="button" class="btn btn-primary" (click)="proximoNivel()">Próximo</button>
+    </div>
 </div>

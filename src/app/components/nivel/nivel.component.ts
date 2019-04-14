@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Nivel, Transformacao } from 'src/app/entities/jogo';
 import { Figura } from 'src/app/entities/figura';
 import { Linha } from 'src/app/entities/linha';
@@ -19,11 +19,22 @@ export class NivelComponent implements OnInit {
     @Input() nivel: Nivel;
     @Input() numero: number;
     figuras: Figura[] = [];
+    opcoes: Figura[] = [];
+    opcaoSelecionada: number;
+
+    @Output() avancarNivel: EventEmitter<any> = new EventEmitter();
 
     constructor() { }
 
     ngOnInit() {
-        this.nivel.figuras.forEach(f =>{
+        this.figuras = this.lerFiguras(this.nivel.figuras);
+
+        this.opcoes = this.lerFiguras(this.nivel.opcoes);
+    }
+
+    lerFiguras(list: any[]): Figura[]{
+        let resp: Figura[] = [];
+        list.forEach(f =>{
             let fig = new Figura();
             f.poligonos.forEach(p =>{
                 let pol: Poligono;
@@ -53,8 +64,9 @@ export class NivelComponent implements OnInit {
                 pol = this.transformacoes(pol, p.transformacoes)
                 fig.poligonos.push(pol);
             });
-            this.figuras.push(fig);
+            resp.push(fig);
         });
+        return resp;
     }
 
     transformacoes(pol: Poligono, transformacoes: Transformacao[]): Poligono{
@@ -96,5 +108,9 @@ export class NivelComponent implements OnInit {
             case 4:
                 return "col-3";
         }
+    }
+
+    proximoNivel(){
+        this.avancarNivel.emit(this.opcaoSelecionada);
     }
 }

@@ -24,7 +24,6 @@ export abstract class Poligono{
             let v1 = this.arestas[i].v1;
             let v2 = this.arestas[i].v2;
             this.ctx.lineTo(v2.x, v2.y);
-            console.log(v1.x +","+ v1.y +"=>"+ v2.x  +","+ v2.y);
         }
         this.ctx.closePath();
         this.ctx.fill();
@@ -57,12 +56,10 @@ export abstract class Poligono{
     public rotate(angulo: number){
         angulo = angulo*Math.PI/180;
         this.arestas.forEach(a =>{
-            console.log(a.v1.x, a.v1.y);
             let x = a.v1.x* Math.cos(angulo) - a.v1.y* Math.sin(angulo);
             let y = a.v1.x* Math.sin(angulo) + a.v1.y* Math.cos(angulo);
             a.v1.x = x;
             a.v1.y = y;
-            console.log(a.v1.x, a.v1.y);
         });
     }
 

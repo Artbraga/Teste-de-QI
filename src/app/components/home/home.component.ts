@@ -16,14 +16,12 @@ export class HomeComponent implements OnInit {
     jogo: Jogo;
     numeroDoNivel: number = 0;
 
-    respostas: string[] = [];
+    respostas: number[] = [];
 
     constructor() { }
 
     ngOnInit(){
-        console.log(json);
         this.jogo = Object.assign(new Jogo(), (<any>json).default);
-        console.log(this.jogo);
     }
 
     iniciar(){
@@ -31,7 +29,7 @@ export class HomeComponent implements OnInit {
         this.selecionado = "jogo";
     }
 
-    proximoNivel(resp: string){
+    proximoNivel(resp: number){
         this.respostas.push(resp);
         this.numeroDoNivel++;
         if(this.numeroDoNivel < this.jogo.niveis.length){

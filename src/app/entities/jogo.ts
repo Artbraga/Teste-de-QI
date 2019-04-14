@@ -13,12 +13,23 @@ export class Jogo{
 
 export class Nivel{
     private _figuras : Figura[];
+    private _opcoes: Figura[];
+    tamanho: number;
+    pergunta: string;
+    resposta: number;
 
     set figuras(value){
         this._figuras = value.map(x => Object.assign(new Figura(), x));
     }
     get figuras(){
         return this._figuras;
+    }
+
+    set opcoes(value){
+        this._opcoes = value.map(x => Object.assign(new Figura(), x));
+    }
+    get opcoes(){
+        return this._opcoes;
     }
 }
 

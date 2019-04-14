@@ -18,11 +18,11 @@
                                 },
                                 {
                                     "nome": "translateX",
-                                    "valor": 10
+                                    "valor": 20
                                 },
                                 {
                                     "nome": "translateY",
-                                    "valor": 35
+                                    "valor": 70
                                 }
                             ]
                         }
@@ -48,11 +48,11 @@
                                 },
                                 {
                                     "nome": "translateX",
-                                    "valor": 40
+                                    "valor": 80
                                 },
                                 {
                                     "nome": "translateY",
-                                    "valor": 10
+                                    "valor": 20
                                 }
                             ]
                         }
@@ -78,7 +78,7 @@
                                 },
                                 {
                                     "nome": "translateX",
-                                    "valor": 60
+                                    "valor": 120
                                 },
                                 {
                                     "nome": "translateY",
@@ -108,17 +108,126 @@
                                 },
                                 {
                                     "nome": "translateX",
-                                    "valor": 70
+                                    "valor": 140
                                 },
                                 {
                                     "nome": "translateY",
-                                    "valor": 10
+                                    "valor": 20
                                 }
                             ]
                         }
                     ]
                 }
-            ]
+            ],
+            "opcoes": [
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "vermelho",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 70
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "azul",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 70
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "azul",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 70
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "trapezio",
+                            "cor": "azul",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 20
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 70
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tamanho": 250,
+            "pergunta": "Qual é a próxima figura da sequência?",
+            "resposta": 1
         }
     ]
 }
