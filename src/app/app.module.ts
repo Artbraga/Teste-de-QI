@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NivelComponent } from './components/nivel/nivel.component';
 import { CronometroComponent } from './components/cronometro/cronometro.component';
+import { RankingComponent } from './components/ranking/ranking.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CronometroComponent } from './components/cronometro/cronometro.componen
     CustomCanvasComponent,
     HomeComponent,
     NivelComponent,
-    CronometroComponent, 
+    CronometroComponent,
+    RankingComponent, 
   ],
   imports: [
     BrowserModule,

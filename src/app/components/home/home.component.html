@@ -11,6 +11,10 @@
     </ng-container>
     
     <ng-container *ngIf="selecionado=='jogo'">
-        <nivel [nivel]="nivelSelecionado" [numero]="numeroDoNivel" (avancarNivel)="proximoNivel($event)"></nivel>
+        <nivel #nivel [nivel]="nivelSelecionado" [numero]="numeroDoNivel" (avancarNivel)="proximoNivel($event)"></nivel>
+    </ng-container>
+
+    <ng-container *ngIf="selecionado=='fim'">
+        <ranking (voltar)="goHome($event)" [numero]="getRespostasCorretas()"></ranking>
     </ng-container>
 </div>

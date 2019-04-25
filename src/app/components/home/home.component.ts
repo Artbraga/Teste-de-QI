@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import * as json from 'src/app/data/jogo.json';
 import { Jogo, Nivel } from 'src/app/entities/jogo';
+import { NivelComponent } from '../nivel/nivel.component';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
     nivelSelecionado: Nivel = null;
     jogo: Jogo;
     numeroDoNivel: number = 0;
+    @ViewChild("nivel") nivelComponent: NivelComponent;
 
     respostas: number[] = [];
 
@@ -34,9 +36,24 @@ export class HomeComponent implements OnInit {
         this.numeroDoNivel++;
         if(this.numeroDoNivel < this.jogo.niveis.length){
             this.nivelSelecionado = this.jogo.niveis[this.numeroDoNivel];
+            this.nivelComponent.carrega(this.nivelSelecionado);
         }
         else{
             this.selecionado = "fim";
         }
+    }
+
+    goHome(){
+        this.selecionado = "home";
+        this.numeroDoNivel = 0;
+        this.respostas = [];
+    }
+
+    getRespostasCorretas(){
+        let resp = 0;
+        this.jogo.niveis.forEach((n, i) =>{
+            if(n.resposta == this.respostas[i]) resp ++;
+        });
+        return resp;
     }
 }

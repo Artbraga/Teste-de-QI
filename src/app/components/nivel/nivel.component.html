@@ -18,13 +18,13 @@
     <div class="row">
         <ng-container *ngFor="let fig of opcoes; let i = index">
             <div class="col-3 opcoes">
-                <game-area [figura]="fig" [numero]="i+4" [tamanho]="nivel.tamanho"></game-area>
+                <game-area [figura]="fig" [numero]="i+10" [tamanho]="nivel.tamanho"></game-area>
                 <input type="radio" value="{{i}}" name="nivel{{nivel}}" [(ngModel)]="opcaoSelecionada" >
             </div>
         </ng-container>
     </div>
 
     <div class="row justify-content-md-end">
-        <button type="button" class="btn btn-primary" (click)="proximoNivel()">Próximo</button>
+        <button type="button" class="btn btn-primary" (click)="proximoNivel()" [disabled]="opcaoSelecionada==null">Próximo</button>
     </div>
 </div>

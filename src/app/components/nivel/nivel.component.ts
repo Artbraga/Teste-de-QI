@@ -27,9 +27,16 @@ export class NivelComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
+        this.carrega();
+    }
+
+    public carrega(nivel: Nivel = null){
+        if(nivel) this.nivel = nivel;
         this.figuras = this.lerFiguras(this.nivel.figuras);
 
         this.opcoes = this.lerFiguras(this.nivel.opcoes);
+
+        this.opcaoSelecionada = null;
     }
 
     lerFiguras(list: any[]): Figura[]{
@@ -105,8 +112,12 @@ export class NivelComponent implements OnInit {
         switch(this.nivel.figuras.length){
             case 1:
                 return "col-12";
+            case 3:
+                return "col-4";
             case 4:
                 return "col-3";
+            case 6:
+                return "col-4";
         }
     }
 

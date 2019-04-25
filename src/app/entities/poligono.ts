@@ -79,7 +79,7 @@ export abstract class Poligono{
 export enum Cores{
     vermelho = "#F00",
     azul= "#00F",
-    amarelo = "#FF0",
+    amarelo = "#FFD700",
     verde = "#0FF",
     preto = "#000"
 }
