@@ -555,7 +555,7 @@
                     "poligonos": [
                         {
                             "nome": "triangulo",
-                            "cor": "vermelho",
+                            "cor": "amarelo",
                             "transformacoes": [
                                 {
                                     "nome": "escalaX",
@@ -581,7 +581,7 @@
                     "poligonos": [
                         {
                             "nome": "linha",
-                            "cor": "vermelho",
+                            "cor": "amarelo",
                             "transformacoes": [
                                 {
                                     "nome": "rotate",
@@ -707,6 +707,406 @@
             "tamanho": 250,
             "pergunta": "Qual é a próxima figura da sequência?",
             "resposta": 0
+        },
+        {
+            "figuras": [
+                {
+                    "poligonos": [
+                        {
+                            "nome": "triangulo",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "pentagono",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "quadrado",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "hexagono",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "opcoes": [
+                {
+                    "poligonos": [
+                        {
+                            "nome": "estrela",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "triangulo",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "quadrado",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "pentagono",
+                            "cor": "verde",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaX",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 1
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tamanho": 250,
+            "pergunta": "Qual é a próxima figura da sequência?",
+            "resposta": 3
+        },
+        {
+            "figuras": [
+                {
+                    "poligonos": [
+                        {
+                            "nome": "quadrado",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "linha",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 70
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 20
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "hexagono",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "triangulo",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "linha",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "escalaY",
+                                    "valor": 2
+                                },
+                                {
+                                    "nome": "translateX",
+                                    "valor": 70
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 20
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                    ]
+                }
+            ],
+            "opcoes": [
+                {
+                    "poligonos": [
+                        {
+                            "nome": "triangulo",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "quadrado",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "pentagono",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "poligonos": [
+                        {
+                            "nome": "hexagono",
+                            "cor": "preto",
+                            "transformacoes": [
+                                {
+                                    "nome": "translateX",
+                                    "valor": 75
+                                },
+                                {
+                                    "nome": "translateY",
+                                    "valor": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tamanho": 250,
+            "pergunta": "Qual é a próxima figura da sequência?",
+            "resposta": 2
         }
     ]
 }
