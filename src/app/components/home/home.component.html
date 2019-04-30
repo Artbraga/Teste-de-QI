@@ -8,6 +8,11 @@
                 <button class="iniciar btn btn-primary btn-lg" (click)="iniciar()"><span>INICIAR TESTE</span></button>
             </div>
         </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <button class="iniciar btn btn-primary btn-lg" (click)="selecionado = 'fim'"><span>RANKING</span></button>
+            </div>
+        </div>
     </ng-container>
     
     <ng-container *ngIf="selecionado=='jogo'">
@@ -15,6 +20,6 @@
     </ng-container>
 
     <ng-container *ngIf="selecionado=='fim'">
-        <ranking (voltar)="goHome($event)" [numero]="getRespostasCorretas()"></ranking>
+        <ranking (voltar)="goHome($event)" [numero]="getRespostasCorretas()" [ranking]="ranking"></ranking>
     </ng-container>
 </div>

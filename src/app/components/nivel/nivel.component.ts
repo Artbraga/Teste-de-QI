@@ -9,6 +9,8 @@ import { Pentagono } from 'src/app/entities/pentagono';
 import { Estrela } from 'src/app/entities/estrela';
 import { Trapezio } from 'src/app/entities/trapezio';
 import { Hexagono } from 'src/app/entities/hexagono';
+import { Arvore } from 'src/app/entities/arvore';
+import { Pizza } from 'src/app/entities/pizza';
 
 @Component({
     selector: 'nivel',
@@ -66,6 +68,12 @@ export class NivelComponent implements OnInit {
                         break;
                     case "hexagono":
                         pol = new Hexagono(p.cor);
+                        break;
+                    case "arvore":
+                        pol = new Arvore(p.cor);
+                        break;
+                    case "pizza":
+                        pol = new Pizza(p.cor);
                         break;
                 }
                 pol = this.transformacoes(pol, p.transformacoes)

@@ -1,7 +1,15 @@
 <div class="row">
     <h4>Você acertou {{numero}} questões.</h4>
 </div>
-<div class="row justify-content-md-end">
+<div class="row justify-content-md-end list">
+    <div class="col-2"><h4>Posição</h4></div>
+    <div class="col-8"><h4>Nome</h4></div>
+    <div class="col-2"><h4>Pontuação</h4></div>
+    <ng-container *ngFor="let r of ranking; let i = index">
+        <div class="col-2"><h5>{{ i + 1 }}</h5></div>
+        <div class="col-8"><h5>{{ r.nome }}</h5></div>
+        <div class="col-2"><h5>{{ r.acertos }}</h5></div>
+    </ng-container>
     <div class="col-md-auto">
         <button class="iniciar btn btn-primary btn-lg" (click)="voltar.emit()"><span>VOLTAR</span></button>
     </div>

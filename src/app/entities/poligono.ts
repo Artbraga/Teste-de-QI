@@ -80,6 +80,8 @@ export enum Cores{
     vermelho = "#F00",
     azul= "#00F",
     amarelo = "#FFD700",
-    verde = "#0FF",
-    preto = "#000"
+    verde = "#008000",
+    preto = "#000",
+    rosa = "#8B008B",
+    marrom = "#8B4513"
 }
