@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NivelComponent } from './components/nivel/nivel.component';
 import { CronometroComponent } from './components/cronometro/cronometro.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { CurvasComponent } from './components/curvas/curvas.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
     HomeComponent,
     NivelComponent,
     CronometroComponent,
-    RankingComponent, 
+    RankingComponent,
+    CurvasComponent, 
   ],
   imports: [
     BrowserModule,

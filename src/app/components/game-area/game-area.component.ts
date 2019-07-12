@@ -14,6 +14,7 @@ export class GameAreaComponent implements OnInit {
     @Input() figura: Figura;
     @Input() numero: number;
     @Input() tamanho: number;
+    @Input() grid: boolean = false;
 
     constructor() { }
 

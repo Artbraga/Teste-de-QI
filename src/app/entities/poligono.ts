@@ -83,5 +83,6 @@ export enum Cores{
     verde = "#008000",
     preto = "#000",
     rosa = "#8B008B",
-    marrom = "#8B4513"
+    marrom = "#8B4513",
+    transparent = "rgba(80, 254, 16, 0)"
 }
