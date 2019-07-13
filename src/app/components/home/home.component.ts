@@ -3,6 +3,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import * as json from 'src/app/data/jogo.json';
 import { Jogo, Nivel } from 'src/app/entities/jogo';
 import { NivelComponent } from '../nivel/nivel.component';
+import { Arvore3D } from 'src/app/entities/arvore-3d';
+import { Cores } from 'src/app/entities/poligono';
 
 @Component({
     selector: 'home',
@@ -16,6 +18,7 @@ export class HomeComponent implements OnInit {
     jogo: Jogo;
     numeroDoNivel: number = 0;
     @ViewChild("nivel") nivelComponent: NivelComponent;
+    arvore3d: Arvore3D;
 
     respostas: number[] = [];
     ranking: Ranking[];
@@ -28,6 +31,9 @@ export class HomeComponent implements OnInit {
         this.ranking = x == null ? [] : x.map(x => Object.assign(new Ranking(), x));
 
         console.log(x, this.ranking);
+        this.arvore3d = new Arvore3D(Cores.transparent);
+        this.arvore3d.translateX(20);
+        this.arvore3d.translateY(20);
     }
 
     iniciar(){
