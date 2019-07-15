@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Poligono } from './entities/poligono';
-import { Vertice } from './entities/vertice';
-import { Aresta } from './entities/aresta';
 
 @Component({
     selector: 'app-root',

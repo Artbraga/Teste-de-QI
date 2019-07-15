@@ -30,4 +30,7 @@
     <ng-container *ngIf="selecionado=='curvas'">
         <curvas></curvas>
     </ng-container>
+
+    <custom-canvas [idCanvas]="'3d'" [figura3d]="arvore3d" [grid]='false' [tamanho]="300"></custom-canvas>
+
 </div>

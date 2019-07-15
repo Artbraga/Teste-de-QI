@@ -1,0 +1,135 @@
+import { Poligono, Cores } from './poligono';
+import { Vertice } from './vertice';
+import { Aresta } from './aresta';
+import { deepStrictEqual } from 'assert';
+
+export class Arvore3D extends Poligono{
+    
+    faces: Face[];
+    constructor(cor: string){
+        super(cor, 21);
+        let v1 = new Vertice(0, 0.7);
+        let v2 = new Vertice(0.5, 0);
+        let v3 = new Vertice(1, 0.7);
+        let v4 = new Vertice(0.7, 0.6);
+        let v5 = new Vertice(1, 1);
+        let v6 = new Vertice(0, 1);
+        let v7 = new Vertice(0.3, 0.6); 
+        this.arestas = [new Aresta(v1,v2), new Aresta(v2,v3), new Aresta(v3,v4), new Aresta(v4, v5), new Aresta(v5, v6),  new Aresta(v6, v7),  new Aresta(v7, v1)];
+
+        this.faces = [new Face(this.arestas)];
+        let v8 = new Vertice(0, 0.7, 1.1);
+        let v9 = new Vertice(0.5, 0, 1.1);
+        let v10 = new Vertice(1, 0.7, 1.1);
+        let v11 = new Vertice(0.7, 0.6, 1.1);
+        let v12 = new Vertice(1, 1, 1.1);
+        let v13 = new Vertice(0, 1, 1.1);
+        let v14 = new Vertice(0.3, 0.6, 1.1); 
+        let a2 = [new Aresta(v8,v9), new Aresta(v14, v8), new Aresta(v13, v14), new Aresta(v12, v13), new Aresta(v11, v12), new Aresta(v10,v11), new Aresta(v9,v10)];
+        //let a2 = [new Aresta(v8,v9), new Aresta(v9,v10), new Aresta(v10,v11), new Aresta(v11, v12), new Aresta(v12, v13),  new Aresta(v13, v14),  new Aresta(v14, v8)];
+        this.arestas = this.arestas.concat(a2);
+        this.faces.push(new Face(a2));
+
+        this.arestas = this.arestas.concat(new Aresta(v1,v8), new Aresta(v2,v9), new Aresta(v3,v10), new Aresta(v4,v11), new Aresta(v5,v12), new Aresta(v6,v13), new Aresta(v7,v14));
+
+        this.faces.push(new Face([new Aresta(v8, v1), new Aresta(v9, v8), new Aresta(v2, v9), new Aresta(v1, v2)]));
+        this.faces.push(new Face([new Aresta(v3, v2), new Aresta(v2, v9), new Aresta(v9, v10), new Aresta(v10, v3)]));
+        this.faces.push(new Face([new Aresta(v4, v3), new Aresta(v3, v10), new Aresta(v10, v11), new Aresta(v11, v4)]));
+        this.faces.push(new Face([new Aresta(v1, v7), new Aresta(v7, v14), new Aresta(v14, v8), new Aresta(v8, v1)]));
+        this.faces.push(new Face([new Aresta(v6, v7), new Aresta(v13, v6), new Aresta(v14, v13), new Aresta(v7, v14)]));
+        this.faces.push(new Face([new Aresta(v4, v5), new Aresta(v11, v4), new Aresta(v12, v11), new Aresta(v5, v12)]));
+        this.faces.push(new Face([new Aresta(v5, v6), new Aresta(v12, v5), new Aresta(v13, v12), new Aresta(v6, v13)]));
+    }
+
+    public desenhar(): void{
+        this.faces.forEach(f => f.estaVisivel([0,0,1]) ? f.desenharFace(this.ctx) : null);
+    };
+
+    // constructor(faces: Face[]){
+    //     super("azul", 0);
+        // let arestas = [];
+        // let v1 = new Vertice(0.5, 0, 1);
+        // let v2 = new Vertice(0, 0.7, 1);
+        // let v3 = new Vertice(1, 0.7, 1);
+        // let v4 = new Vertice(0.5, 0.7, 2);
+        // let v5 = new Vertice(0, 1, 1);
+        // let v6 = new Vertice(1, 1, 1);
+        // let v7 = new Vertice(0.5, 1, 2);
+        // let v8 = new Vertice(0.3, 0.5, 1);
+
+        // let f1 = new Face([new Aresta(v1, v2), new Aresta(v1, v4), new Aresta(v2, v4)]);
+        // let f2 = new Face([new Aresta(v1, v3), new Aresta(v1, v4), new Aresta(v3, v4)]);
+        // let f3 = new Face([new Aresta(v1, v2), new Aresta(v1, v3), new Aresta(v2, v3)]);
+        // let f4 = new Face([new Aresta(v2, v3), new Aresta(v2, v4), new Aresta(v3, v4)]);
+        // let f5 = new Face([new Aresta(v6, v7), new Aresta(v6, v8), new Aresta(v7, v8)]);
+        // let f6 = new Face([new Aresta(v5, v7), new Aresta(v5, v8), new Aresta(v7, v8)]);
+        // let f7 = new Face([new Aresta(v5, v6), new Aresta(v5, v8), new Aresta(v6, v8)]);
+        // let f8 = new Face([new Aresta(v5, v6), new Aresta(v5, v7), new Aresta(v6, v7)]);
+
+    //     this.faces = [f1, f2, f3, f4, f5, f6, f7, f8];
+
+    //     math
+    // }
+}
+
+class Face extends Poligono{
+    arestas: Aresta[];
+
+    constructor(arestas: Aresta[]){
+        super(Cores.transparent, arestas.length);
+        this.arestas = arestas;
+    }
+
+    public estaVisivel(visao: number[]):boolean{
+        let normal = [];
+        let u = this.arestas[0];
+        let v = this.arestas[1];
+        let vetU = [u.v2.x - u.v1.x, u.v2.y - u.v1.y, u.v2.z - u.v1.z];
+        let vetV = [v.v2.x - v.v1.x, v.v2.y - v.v1.y, v.v2.z - v.v1.z];
+
+        normal[0] = vetU[1] * vetV[2] - vetU[2] * vetV[1];
+        normal[1] = vetU[0] * vetV[2] - vetU[2] * vetV[0];
+        normal[2] = vetU[0] * vetV[1] - vetU[1] * vetV[0];
+        return (visao[0] * normal[0] + visao[1] * normal[1] + visao[2] * normal[2]) > 0;
+    }
+
+    public desenharFace(ctx: CanvasRenderingContext2D): void{
+        this.ctx = ctx;
+        if(this.ctx == null){
+            console.log("Contexto indefinido");
+            return;
+        }
+        this.ctx.fillStyle = this.cor;
+        this.ctx.beginPath();
+        for(let i = 0; i < this.lados; i++){
+            let v1 = this.arestas[i].v1;
+            let v2 = this.arestas[i].v2;
+            this.ctx.moveTo(v1.x/v1.z, v1.y/v1.z );
+            this.ctx.lineTo(v2.x/v2.z, v2.y/v2.z);
+        }
+        this.ctx.stroke();
+    }
+}
+
+// class Aresta{
+//     v1: Vertice;
+//     v2: Vertice;
+
+//     constructor(v1: Vertice, v2: Vertice){
+//         this.v1 = v1;
+//         this.v2 = v2;
+//     }
+// }
+
+// class Vertice{
+//     x: number;
+//     y: number;
+//     z: number;
+
+//     private escala: number = 100;
+//     constructor(x: number, y: number, z: number){
+//         this.x = x*this.escala;
+//         this.y = y*this.escala;
+//         this.z = z*this.escala;
+//     }
+// }

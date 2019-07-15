@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Figura } from 'src/app/entities/figura';
-import { Vertice } from 'src/app/entities/vertice';
+import { Arvore3D } from 'src/app/entities/arvore-3d';
 
 @Component({
     selector: 'custom-canvas',
@@ -11,6 +11,7 @@ export class CustomCanvasComponent implements AfterViewInit {
 
     @Input() idCanvas: string;
     @Input() figura: Figura;
+    @Input() figura3d: Arvore3D;
     @Input() grid: boolean;
     @Input() tamanho: number;
     @Input() possuiPoligono: boolean = true;
@@ -33,6 +34,11 @@ export class CustomCanvasComponent implements AfterViewInit {
                 p.ctx = ctx;
                 p.desenhar();
             });
+        }
+        if (this.figura3d != null){
+            this.figura3d.ctx = ctx;
+            this.figura3d.ctx.strokeStyle = "black";
+            this.figura3d.desenhar();
         }
     }
 
