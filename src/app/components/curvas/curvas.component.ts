@@ -3,6 +3,7 @@ import { Vertice } from '../../entities/vertice';
 import { Triangulo } from 'src/app/entities/triangulo';
 import { Cores, Poligono } from 'src/app/entities/poligono';
 import { CustomCanvasComponent } from '../custom-canvas/custom-canvas.component';
+import { Arvore3D } from 'src/app/entities/arvore-3d';
 
 @Component({
 	selector: 'curvas',
@@ -12,7 +13,7 @@ import { CustomCanvasComponent } from '../custom-canvas/custom-canvas.component'
 export class CurvasComponent implements OnInit {
 
 	vertices: Vertice[] = [];
-	fig: Poligono;
+	fig: Arvore3D;
 	@ViewChild('canvas') canvas: CustomCanvasComponent;
 
 	constructor() {
@@ -25,11 +26,15 @@ export class CurvasComponent implements OnInit {
 	desenharCurva() {
 		let size = 200;
 		this.canvas.context.clearRect(0, 0, 800, 800);
-		let p1 = [this.vertices[0].x, this.vertices[0].y];
+		let p1 = [this.vertices[0].x, this.vertices[0].y, this.vertices[0].z];
 		let arrayX = this.vertices.map(k => k.x);
 		let arrayY = this.vertices.map(k => k.y);
-		for (let i = 0; i < size; i++) {
-			let p2 = [this.bezier(arrayX, i/size), this.bezier(arrayY, i/size)];
+		let arrayZ = this.vertices.map(x => x.z);
+		this.vertices.forEach(v => {
+			this.canvas.desenharPonto([v.x, v.y, v.z])
+		});
+		for (let i = 0; i <= size; i++) {
+			let p2 = [this.bezier(arrayX, i/size), this.bezier(arrayY, i/size), this.bezier(arrayZ, i/size)];
 			this.canvas.desenharReta([p1, p2]);
 			p1 = p2;
 		}
@@ -37,26 +42,31 @@ export class CurvasComponent implements OnInit {
 
 	desenhar(){
 		let size = 500;
-		this.fig = new Triangulo(Cores.transparent);
-		this.fig.escalaX(1);
-		this.fig.escalaY(1);
+		this.fig = new Arvore3D(Cores.transparent);
+        this.fig.visao = [1,1,1];
 		this.fig.ctx = this.canvas.context;
 		let arrayX = this.vertices.map(k => k.x);
 		let arrayY = this.vertices.map(k => k.y);
-		let p1 = [this.vertices[0].x, this.vertices[0].y];
+		let arrayZ = this.vertices.map(x => x.z);
+		let p1 = [this.vertices[0].x, this.vertices[0].y, this.vertices[0].z];
 		this.fig.translateY(p1[1]-100);
 		this.fig.translateX(p1[0]);
-		for (let i = 0; i < size; i++) {
+		for (let i = 0; i <= size; i++) {
 			setTimeout( () =>{
 				this.canvas.context.clearRect(0, 0, 800, 800);
 				this.desenharCurva();
-				let p2 = [this.bezier(arrayX, i/size), this.bezier(arrayY, i/size)];
+				let p2 = [this.bezier(arrayX, i/size), this.bezier(arrayY, i/size), this.bezier(arrayZ, i/size)];
 				this.fig.translateX(p2[0]-p1[0]);
 				this.fig.translateY(p2[1]-p1[1]);
+				this.fig.translateZ(p2[2]-p1[2]);
 				this.fig.desenhar();
 				p1 = p2;
 			}, 5);
 		}
+	}
+
+	desenharPontos(pontos: Vertice[]){
+
 	}
 
 	delay(ms: number) {

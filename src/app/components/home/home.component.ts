@@ -30,10 +30,10 @@ export class HomeComponent implements OnInit {
         let x = JSON.parse(localStorage.getItem("ranking"));
         this.ranking = x == null ? [] : x.map(x => Object.assign(new Ranking(), x));
 
-        console.log(x, this.ranking);
         this.arvore3d = new Arvore3D(Cores.transparent);
-        this.arvore3d.translateX(20);
-        this.arvore3d.translateY(20);
+        this.arvore3d.visao = [1,1, 1];
+        this.arvore3d.translateX(100);
+        this.arvore3d.translateY(100);
     }
 
     iniciar(){

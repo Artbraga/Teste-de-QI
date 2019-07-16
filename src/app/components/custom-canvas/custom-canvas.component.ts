@@ -14,20 +14,20 @@ export class CustomCanvasComponent implements AfterViewInit {
     @Input() figura3d: Arvore3D;
     @Input() grid: boolean;
     @Input() tamanho: number;
+    @Input() tamanho2: number;
     @Input() possuiPoligono: boolean = true;
-    constructor() { }
 
-    public get context(){
-        var canvas = <HTMLCanvasElement> document.getElementById(this.idCanvas);
-        var context = canvas.getContext("2d");
-		return context
+    context: CanvasRenderingContext2D;
+    constructor() { 
+        
     }
-    
+
     ngAfterViewInit() {
-        let c = <HTMLCanvasElement> document.getElementById(this.idCanvas);
-        c.width  = this.tamanho;
-        c.height = this.tamanho;
-        let ctx = c.getContext("2d");
+        let canvas = <HTMLCanvasElement> document.getElementById(this.idCanvas);
+        this.context = canvas.getContext("2d");
+        canvas.height = this.tamanho;
+        canvas.width  = this.tamanho2 == null ? this.tamanho : this.tamanho2;
+        let ctx = canvas.getContext("2d");
         if(this.grid) this.desenharGrid();
         if(this.possuiPoligono){
             this.figura.poligonos.forEach(p =>{
@@ -63,12 +63,14 @@ export class CustomCanvasComponent implements AfterViewInit {
     }
 
     public desenharReta(v: number[][]){
-        var canvas = <HTMLCanvasElement> document.getElementById(this.idCanvas);
-        var context = canvas.getContext("2d");
+        this.context.moveTo(v[0][0]/v[0][2], v[0][1]/v[0][2]);
+        this.context.lineTo(v[1][0]/v[1][2], v[1][1]/v[1][2]);
+        this.context.strokeStyle = "black";
+        this.context.stroke();
+    }
 
-        context.moveTo(v[0][0], v[0][1]);
-        context.lineTo(v[1][0], v[1][1]);
-        context.strokeStyle = "black";
-        context.stroke();
+    public desenharPonto(v: number[]){
+        this.context.fillStyle = 'red';
+        this.context.fillRect(v[0]/v[2]-2, v[1]/v[2]-2, 5, 5);
     }
 }

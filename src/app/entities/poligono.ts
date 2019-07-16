@@ -41,6 +41,12 @@ export abstract class Poligono{
         });
     }
 
+    public translateZ(x: number){
+        this.arestas.forEach(a => {
+            a.v1.z += x;
+        });
+    }
+
     public escalaX(mult: number){
         this.arestas.forEach(a => {
             a.v2.x *= mult;

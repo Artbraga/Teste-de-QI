@@ -5,24 +5,32 @@
         <input type="number" [(ngModel)]="vertices[0].x">
         <label>Y0</label>
         <input type="number" [(ngModel)]="vertices[0].y">
+        <label>Z0</label>
+        <input type="number" [(ngModel)]="vertices[0].z">
     </div>
     <div class="input-coordenadas col-2">
         <label>X1</label>
         <input type="number" [(ngModel)]="vertices[1].x">
         <label>Y1</label>
         <input type="number" [(ngModel)]="vertices[1].y">
+        <label>Z1</label>
+        <input type="number" [(ngModel)]="vertices[1].z">
     </div>
     <div class="input-coordenadas col-2">
         <label>X2</label>
         <input type="number" [(ngModel)]="vertices[2].x">
         <label>Y2</label>
         <input type="number" [(ngModel)]="vertices[2].y">
+        <label>Z2</label>
+        <input type="number" [(ngModel)]="vertices[2].z">
     </div>
     <div class="input-coordenadas col-2">
         <label>X3</label>
         <input type="number" [(ngModel)]="vertices[3].x">
         <label>Y3</label>
         <input type="number" [(ngModel)]="vertices[3].y">
+        <label>Z3</label>
+        <input type="number" [(ngModel)]="vertices[3].z">
     </div>
     <div class="input-coordenadas col-4">
         <button class="btn btn-primary btn-lg" (click)="desenharCurva()"><span>desenhar curva</span></button>
@@ -33,7 +41,7 @@
 <div class="row">
     <custom-canvas #canvas 
                     [idCanvas]="'curvas'" 
-                    [figura]="fig" 
+                    [figura3d]="fig" 
                     [grid]="false" 
                     [tamanho]="800" 
                     [possuiPoligono]="false">

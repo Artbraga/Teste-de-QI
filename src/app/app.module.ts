@@ -11,6 +11,7 @@ import { NivelComponent } from './components/nivel/nivel.component';
 import { CronometroComponent } from './components/cronometro/cronometro.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { CurvasComponent } from './components/curvas/curvas.component';
+import { RotacaoComponent } from './components/rotacao/rotacao.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CurvasComponent } from './components/curvas/curvas.component';
     NivelComponent,
     CronometroComponent,
     RankingComponent,
-    CurvasComponent, 
+    CurvasComponent,
+    RotacaoComponent, 
   ],
   imports: [
     BrowserModule,
