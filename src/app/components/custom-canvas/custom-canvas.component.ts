@@ -71,6 +71,6 @@ export class CustomCanvasComponent implements AfterViewInit {
 
     public desenharPonto(v: number[]){
         this.context.fillStyle = 'red';
-        this.context.fillRect(v[0]/v[2]-2, v[1]/v[2]-2, 5, 5);
+        this.context.fillRect(v[0]/(1+(v[2]/200))-2, v[1]/(1+(v[2]/200))-2, 5, 5);
     }
 }

@@ -1,8 +1,6 @@
 import { Poligono, Cores } from './poligono';
 import { Vertice } from './vertice';
 import { Aresta } from './aresta';
-import { deepStrictEqual } from 'assert';
-import { format } from 'path';
 
 export class Arvore3D extends Poligono{
     
@@ -10,6 +8,8 @@ export class Arvore3D extends Poligono{
     visao: number[];
     constructor(cor: string){
         super(cor, 21);
+        this.arestas = [];
+        this.faces = [];
         let v1 = new Vertice(0, 0.7);
         let v2 = new Vertice(0.5, 0);
         let v3 = new Vertice(1, 0.7);
@@ -18,8 +18,8 @@ export class Arvore3D extends Poligono{
         let v6 = new Vertice(0, 1);
         let v7 = new Vertice(0.3, 0.6); 
         this.arestas = [new Aresta(v1,v2), new Aresta(v2,v3), new Aresta(v3,v4), new Aresta(v4, v5), new Aresta(v5, v6),  new Aresta(v6, v7),  new Aresta(v7, v1)];
-
         this.faces = [new Face(this.arestas, Cores.cinza)];
+
         let v8 = new Vertice(0, 0.7, 50);
         let v9 = new Vertice(0.5, 0, 50);
         let v10 = new Vertice(1, 0.7, 50);
@@ -30,12 +30,12 @@ export class Arvore3D extends Poligono{
         let a2 = [new Aresta(v8,v9), new Aresta(v14, v8), new Aresta(v13, v14), new Aresta(v12, v13), new Aresta(v11, v12), new Aresta(v10,v11), new Aresta(v9,v10)];
         //let a2 = [new Aresta(v8,v9), new Aresta(v9,v10), new Aresta(v10,v11), new Aresta(v11, v12), new Aresta(v12, v13),  new Aresta(v13, v14),  new Aresta(v14, v8)];
         this.arestas = this.arestas.concat(a2);
-        this.faces.push(new Face(a2, Cores.preto + "ff"));
+        this.faces.push(new Face(a2, Cores.cinzaEscuro));
 
         this.arestas = this.arestas.concat(new Aresta(v1,v8), new Aresta(v2,v9), new Aresta(v3,v10), new Aresta(v4,v11), new Aresta(v5,v12), new Aresta(v6,v13), new Aresta(v7,v14));
 
-        this.faces.push(new Face([new Aresta(v1, v8), new Aresta(v8, v9), new Aresta(v9, v2), new Aresta(v2, v1)], Cores.cinzaEscuro));
-        this.faces.push(new Face([new Aresta(v3, v2), new Aresta(v2, v9), new Aresta(v9, v10), new Aresta(v10, v3)], Cores.cinzaEscuro));
+        this.faces.push(new Face([new Aresta(v1, v8), new Aresta(v8, v9), new Aresta(v9, v2), new Aresta(v2, v1)], Cores.cinzaClaro));
+        this.faces.push(new Face([new Aresta(v3, v2), new Aresta(v2, v9), new Aresta(v9, v10), new Aresta(v10, v3)], Cores.cinzaClaro));
         this.faces.push(new Face([new Aresta(v3, v4), new Aresta(v4, v11), new Aresta(v11, v10), new Aresta(v10, v3)], Cores.cinzaEscuro));
         this.faces.push(new Face([new Aresta(v7, v1), new Aresta(v1, v8), new Aresta(v8, v14), new Aresta(v14, v7)], Cores.cinzaEscuro));
         this.faces.push(new Face([new Aresta(v7, v6), new Aresta(v6, v13), new Aresta(v13, v14), new Aresta(v14, v7)], Cores.cinzaEscuro));
@@ -93,6 +93,15 @@ class Face extends Poligono{
 
     public desenharFace(ctx: CanvasRenderingContext2D, visao: number[]): void{
         this.ctx = ctx;
+        if(this.cor != Cores.cinza){
+
+            if(this.arestas[0].v1.x < visao[0]){
+                this.cor = Cores.cinzaClaro
+            }
+            else{
+                this.cor = Cores.cinzaEscuro;
+            }
+        }
         if(this.ctx == null){
             console.log("Contexto indefinido");
             return;

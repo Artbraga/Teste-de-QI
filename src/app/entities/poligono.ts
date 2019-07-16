@@ -91,6 +91,8 @@ export enum Cores{
     rosa = "#8B008B",
     marrom = "#8B4513",
     transparent = "rgba(0, 0, 0, 0)",
-    cinza = "#A9A9A9",
-    cinzaEscuro = "#696969"
+    cinza = "rgb(50,250,150)",
+    cinzaEscuro = "rgb(4, 150, 75)",
+    cinzaClaro = "rgba(80, 250, 165)"
+
 }

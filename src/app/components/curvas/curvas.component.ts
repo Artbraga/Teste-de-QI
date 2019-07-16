@@ -43,7 +43,7 @@ export class CurvasComponent implements OnInit {
 	desenhar(){
 		let size = 500;
 		this.fig = new Arvore3D(Cores.transparent);
-        this.fig.visao = [1,1,1];
+        this.fig.visao = [400, 400, 0];
 		this.fig.ctx = this.canvas.context;
 		let arrayX = this.vertices.map(k => k.x);
 		let arrayY = this.vertices.map(k => k.y);
