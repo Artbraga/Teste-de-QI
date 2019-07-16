@@ -9,4 +9,12 @@ export class Vertice{
         this.y = y*this.escala;
         this.z = z;
     }
+
+    public projetarX(): number{
+        return this.x/(1+(this.z/200))
+    }
+
+    public projetarY(): number {
+        return this.y/(1+(this.z/200))
+    }
 }

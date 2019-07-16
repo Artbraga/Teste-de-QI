@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
         this.ranking = x == null ? [] : x.map(x => Object.assign(new Ranking(), x));
 
         this.arvore3d = new Arvore3D(Cores.transparent);
-        this.arvore3d.visao = [1,1, 1];
+        this.arvore3d.visao = [500, 300, 1];
         this.arvore3d.translateX(100);
         this.arvore3d.translateY(100);
     }

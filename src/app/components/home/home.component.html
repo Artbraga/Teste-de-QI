@@ -18,6 +18,11 @@
                 <button class="iniciar btn btn-primary btn-lg" (click)="selecionado = 'curvas'"><span>CURVAS</span></button>
             </div>
         </div>
+        <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <button class="iniciar btn btn-primary btn-lg" (click)="selecionado = 'rotacao'"><span>ROTAÇÃO</span></button>
+                </div>
+            </div>
         <custom-canvas [idCanvas]="'3d'" [possuiPoligono]="false" [figura3d]="arvore3d" [grid]='false' [tamanho]="500" [tamanho2]="800"></custom-canvas>
     </ng-container>
     
@@ -28,9 +33,14 @@
     <ng-container *ngIf="selecionado=='fim'">
         <ranking (voltar)="goHome($event)" [numero]="getRespostasCorretas()" [ranking]="ranking"></ranking>
     </ng-container>
+
     <ng-container *ngIf="selecionado=='curvas'">
         <curvas></curvas>
     </ng-container>
+
+    <ng-container *ngIf="selecionado=='rotacao'">
+            <rotacao></rotacao>
+        </ng-container>
 
 
 </div>

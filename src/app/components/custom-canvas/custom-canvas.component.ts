@@ -63,8 +63,8 @@ export class CustomCanvasComponent implements AfterViewInit {
     }
 
     public desenharReta(v: number[][]){
-        this.context.moveTo(v[0][0]/v[0][2], v[0][1]/v[0][2]);
-        this.context.lineTo(v[1][0]/v[1][2], v[1][1]/v[1][2]);
+        this.context.moveTo(v[0][0]/(1+(v[0][2]/200)), v[0][1]/(1+(v[0][2]/200)));
+        this.context.lineTo(v[1][0]/(1+(v[1][2]/200)), v[1][1]/(1+(v[1][2]/200)));
         this.context.strokeStyle = "black";
         this.context.stroke();
     }

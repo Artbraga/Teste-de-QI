@@ -1,31 +1,39 @@
-<h3>Coordenadas</h3>
 <div class="row" style="display: block">
-    <div class="input-coordenadas col-2">
-        <label>X0</label>
-        <input type="number" [(ngModel)]="vertices[0].x">
-        <label>Y0</label>
-        <input type="number" [(ngModel)]="vertices[0].y">
-    </div>
-    <div class="input-coordenadas col-2">
-        <label>X1</label>
-        <input type="number" [(ngModel)]="vertices[1].x">
-        <label>Y1</label>
-        <input type="number" [(ngModel)]="vertices[1].y">
-    </div>
-    <div class="input-coordenadas col-4">
-    </div>
-    <div class="input-coordenadas col-4">
-        <button class="btn btn-primary btn-lg" (click)="desenharEixo()"><span>desenhar eixo</span></button>
-        <br/>
-        <button class="btn btn-primary btn-lg" (click)="rotacionar()"><span>rotacionar</span></button>
-    </div>
+	<div class="input-coordenadas col-3">
+		<h3>Posição Inicial</h3>
+		<label>X</label>
+		<input type="number" [(ngModel)]="v0.x">
+		<label>Y</label>
+		<input type="number" [(ngModel)]="v0.y">
+		<label>Y</label>
+		<input type="number" [(ngModel)]="v0.z">
+	</div>
+	<div class="input-coordenadas col-3">
+		<h3>Coordenadas</h3>
+		<label>X0</label>
+		<input type="number" [(ngModel)]="vertices[0].x">
+		<label>Y0</label>
+		<input type="number" [(ngModel)]="vertices[0].y">
+		<label>Z0</label>
+		<input type="number" [(ngModel)]="vertices[0].z">
+	</div>
+	<div class="input-coordenadas col-3">
+		<h3 style="color: white">.</h3>
+		<label>X1</label>
+		<input type="number" [(ngModel)]="vertices[1].x">
+		<label>Y1</label>
+		<input type="number" [(ngModel)]="vertices[1].y">
+		<label>Z0</label>
+		<input type="number" [(ngModel)]="vertices[1].z"></div>
+
+	<div class="input-coordenadas col-3">
+		<button class="btn btn-primary btn-lg" (click)="desenharEixo()"><span>desenhar eixo</span></button>
+		<br />
+		<button class="btn btn-primary btn-lg" (click)="rotacionar()"><span>rotacionar</span></button>
+	</div>
 </div>
 <div class="row">
-    <custom-canvas #canvas 
-                    [idCanvas]="'curvas'" 
-                    [figura3d]="fig" 
-                    [grid]="false" 
-                    [tamanho]="800" 
-                    [possuiPoligono]="false">
-    </custom-canvas>
+	<custom-canvas #canvas [idCanvas]="'curvas'" [figura3d]="fig" [grid]="false" [tamanho]="800"
+		[possuiPoligono]="false">
+	</custom-canvas>
 </div>
